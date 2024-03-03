@@ -10,17 +10,15 @@ export class UsersRepository {
 
   async create(createUserDto: CreateUserDto): Promise<UserEntity> {
     return this.prisma.user.create({
-    data: createUserDto,
-})
-
-const users = await prisma.user.findMany()
+      data: createUserDto,
+    });
   }
 
   async findAll(): Promise<UserEntity[]> {
     return await this.prisma.user.findMany();
   }
 
-  async findOne(id: number): Promise<UserEntity[]> {
+  async findOne(id: number): Promise<UserEntity> {
     return this.prisma.user.findUnique({
       where: {
         id,
@@ -34,12 +32,14 @@ const users = await prisma.user.findMany()
         id,
       },
       data: updateUserDto,
-    })
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number): Promise<UserEntity> {
+    return this.prisma.user.delete({
+      where: {
+        id,
+      },
+    });
   }
-}
-
 }
