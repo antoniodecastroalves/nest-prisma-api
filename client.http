@@ -1,0 +1,18 @@
+### Variebles
+@apiurl = http://localhost:3000
+
+### List users
+GET {{apiurl}}/users HTTP/1.1
+
+### Find One users
+GET {{apiurl}}/users/2 HTTP/1.1
+
+### Create users
+POST {{apiurl}}/courses HTTP/1.1
+content-type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@doe.com",
+  "admin": false
+}
