@@ -8,11 +8,11 @@ GET {{apiurl}}/users HTTP/1.1
 GET {{apiurl}}/users/2 HTTP/1.1
 
 ### Create users
-POST {{apiurl}}/courses HTTP/1.1
+POST {{apiurl}}/users HTTP/1.1
 content-type: application/json
 
 {
-  "name": "John Doe",
-  "email": "john@doe.com",
+  "name": "Jane Silva",
+  "email": "jane@doe.com",
   "admin": false
 }
